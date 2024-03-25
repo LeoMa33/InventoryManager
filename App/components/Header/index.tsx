@@ -2,14 +2,28 @@ import React from 'react';
 import {
   Text,
   View,
+  Image,
 } from 'react-native';
   
 export function Header({ currentPage }:any): React.JSX.Element {
-return (
-    <View style={{flexDirection:'row', height:35, alignItems:'center', margin:20}}>
-        <View style={{height:40, aspectRatio:1/1, borderRadius:100, backgroundColor:colors.white}}></View>
-    </View>
-);
+    switch (currentPage) {
+        case "scan":
+            return (
+                <View style={{flexDirection:'row', height:35, alignItems:'center', margin:20, gap:5}}>
+                    <Image source={require("../../img/arrow.png")} style={{width:25, transform:[{scaleX:-1}]}}></Image>
+                    <Text style={{fontSize:14, color:colors.white, fontWeight:'bold'}}>BACK</Text>
+                </View>
+            );
+            break;
+    
+        default:
+            return (
+                <View style={{flexDirection:'row', height:35, alignItems:'center', margin:20}}>
+                    <Text style={{fontSize:14, color:colors.white, fontWeight:'bold'}}>Inventoy Manager</Text>
+                </View>
+            );
+    }
+
 }
 
 const colors = {

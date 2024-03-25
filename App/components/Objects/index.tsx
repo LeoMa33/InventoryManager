@@ -22,7 +22,14 @@ export function Objects(props:ObjectsProps): React.JSX.Element {
     case "result":
       
     return (
-      <View style={{backgroundColor:colors.dark, height:175, width:150}}></View>
+      <View style={{backgroundColor:colors.dark, height:100, flexDirection:'row', paddingHorizontal:13, paddingVertical:16, alignItems:'center', gap:10}}>
+          <Image source={require("../../img/pngegg.png")} style={{width:65, height:65, aspectRatio:1/1}}></Image>
+          
+          <View style={{width:"100%", padding:4, gap:0, flexDirection:'column'}}>
+            <Text style={{color:colors.white, fontWeight:"500"}}>Nom de l'article</Text>
+            <Text style={{color:colors.green, fontWeight:"500"}}>3 En stock</Text>
+          </View>
+        </View>
     );
   
     default:
